@@ -8,9 +8,9 @@ let activeDynastyMesh = null;
 
 // Earth textures (CDN)
 const earthTextures = {
-    diffuse: "https://raw.githubusercontent.com/johan/world.geo.json/master/images/earth-dark.jpg",
-    bump: "https://raw.githubusercontent.com/johan/world.geo.json/master/images/earth-bump.jpg",
-    specular: "https://raw.githubusercontent.com/johan/world.geo.json/master/images/earth-specular.jpg"
+    diffuse: "https://cdn.jsdelivr.net/gh/ashang/earth-textures@master/2_no_clouds_4k.jpg",
+    bump: "https://cdn.jsdelivr.net/gh/ashang/earth-textures@master/elev_bump_4k.jpg",
+    specular: "https://cdn.jsdelivr.net/gh/ashang/earth-textures@master/water_4k.png"
 };
 // Dynasty dataset folder
 const DYNASTY_PATH = "assets/dynasties/";
@@ -125,7 +125,7 @@ async function loadDynasty(dynastyKey) {
         scene.remove(activeDynastyMesh);
     }
 
-    const url = DYNASTY_PATH + DYNASTY_FILES[dynastyKey];
+   const url = DYNASTY_PATH + DYNASTY_FILES[dynastyKey] + "?v=2";
     const response = await fetch(url);
     const data = await response.json();
 
