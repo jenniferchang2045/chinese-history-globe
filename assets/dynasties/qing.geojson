@@ -18,4 +18,3 @@
     }
   ]
 }
-const url = DYNASTY_PATH + DYNASTY_FILES[dynastyKey] + "?v=2";
