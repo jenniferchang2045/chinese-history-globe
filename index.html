@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Chinese History 3D Globe Tutor</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r150/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.150.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+<div id="main-container">
+    <div id="timeline-panel">
+        <h2>Chinese History Timeline</h2>
+        <ul id="dynasty-list">
+            <li data-dynasty="qin">Qin Dynasty (221–206 BCE)</li>
+            <li data-dynasty="han_west">Western Han (206 BCE–9 CE)</li>
+            <li data-dynasty="han_east">Eastern Han (25–220)</li>
+            <li data-dynasty="tang">Tang Dynasty (618–907)</li>
+            <li data-dynasty="song_n">Northern Song (960–1127)</li>
+            <li data-dynasty="song_s">Southern Song (1127–1279)</li>
+            <li data-dynasty="yuan">Yuan Dynasty (1271–1368)</li>
+            <li data-dynasty="ming">Ming Dynasty (1368–1644)</li>
+            <li data-dynasty="qing">Qing Dynasty (1644–1912)</li>
+        </ul>
+    </div>
+    <div id="globe-panel"><canvas id="globe-canvas"></canvas></div>
+    <div id="tutor-panel">
+        <h2>History Tutor</h2>
+        <div id="tutor-output"></div>
+        <div id="tutor-input-area">
+            <input id="tutor-input" type="text" placeholder="Ask a question..."/>
+            <button onclick="askTutor()">Ask</button>
+        </div>
+    </div>
+</div>
+<script>
+function askTutor() {
+    const input = document.getElementById("tutor-input").value.trim();
+    if (!input) return;
+    const out = document.getElementById("tutor-output");
+    out.innerHTML += `<div class='user-msg'><strong>You:</strong> ${input}</div>`;
+    const reply = "Processing your question about Chinese history...";
+    out.innerHTML += `<div class='tutor-msg'><strong>Tutor:</strong> ${reply}</div>`;
+    const speech = new SpeechSynthesisUtterance(reply);
+    speech.lang = "en-US"; speech.rate = 1;
+    window.speechSynthesis.speak(speech);
+    document.getElementById("tutor-input").value = "";
+}
+</script>
+<script src="js/heatmapShader.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
