@@ -8,9 +8,9 @@ let activeDynastyMesh = null;
 
 // Earth textures (CDN)
 const earthTextures = {
-    diffuse: "https://raw.githubusercontent.com/ajd-123/earth-textures/main/earth_diffuse.jpg",
-    bump: "https://raw.githubusercontent.com/ajd-123/earth-textures/main/earth_bump.jpg",
-    specular: "https://raw.githubusercontent.com/ajd-123/earth-textures/main/earth_specular.jpg"
+    diffuse: "https://cdn.jsdelivr.net/gh/konstantinullrich/assets@master/earth/earthmap4k.jpg",
+    bump: "https://cdn.jsdelivr.net/gh/konstantinullrich/assets@master/earth/earthbump4k.jpg",
+    specular: "https://cdn.jsdelivr.net/gh/konstantinullrich/assets@master/earth/earthspec4k.jpg"
 };
 
 // Dynasty dataset folder
